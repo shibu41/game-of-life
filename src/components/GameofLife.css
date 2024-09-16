@@ -1,0 +1,164 @@
+.game-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    padding: 50px 20px 20px;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.sidebar.hidden {
+    transform: translateX(100%);
+}
+
+.sidebar-toggle-wrapper {
+    position: fixed;
+    top: 5%;
+    right: 2%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.sidebar-toggle-button {
+    background-color: #76c7c0;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-toggle-button:hover {
+    background-color: #64a29e;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin-right: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    overflow-y: auto;
+    position: relative;
+}
+
+.sidebar.hidden ~ .main-content {
+    margin-right: 0;
+}
+
+.grid {
+    display: grid;
+    gap: 1px;
+    background-color: #212121;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #424242;
+    transition: background-color 0.2s;
+}
+
+.cell.alive {
+    background-color: #76c7c0;
+}
+
+.cell.dead {
+    background-color: #424242;
+}
+
+.header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: #e0e0e0;
+}
+
+.start-stop-button,
+.sidebar-controls .btn {
+    background-color: #76c7c0;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.start-stop-button:hover,
+.sidebar-controls .btn:hover {
+    background-color: #64a29e;
+}
+
+.sidebar-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.size-controls,
+.speed-controls {
+    margin: 10px;
+}
+
+.size-controls label,
+.speed-controls label {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.speed-controls input[type="range"] {
+    margin: 0 10px;
+}
+
+.speed-controls span {
+    color: #e0e0e0;
+}
+
+.pattern-buttons {
+    margin-top: 20px;
+}
+
+.pattern-buttons button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background-color: #009688;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.pattern-buttons button:hover {
+    background-color: #00796b;
+}
